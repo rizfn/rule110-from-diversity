@@ -1,0 +1,7 @@
+# simulation data (regenerate with the run_*.sh scripts in each folder)
+src/*/outputs/
+# compiled binaries, built next to their sources
+src/random_starts/lockcharge
+src/noise/walls
+ckpt*.bin
+__pycache__/

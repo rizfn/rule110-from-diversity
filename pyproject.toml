@@ -1,9 +1,10 @@
 [project]
 name = "rule110-from-diversity"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+description = "Rule 110 emulated by a spatial mixture of the symmetric rules 36, 37 and 5"
+readme = "readme.md"
 requires-python = ">=3.13"
 dependencies = [
+    "matplotlib>=3.11.2",
     "numpy>=2.5.3",
 ]
