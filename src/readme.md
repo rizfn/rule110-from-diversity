@@ -34,6 +34,16 @@ noise/                      Sec. 4, Fig. 4
   fig4.py                   -> plots/
 info_cost/                  Discussion
   info_cost.py              description lengths of the rules and the mixture
+emulation_search/           Sec. 2 (minimal period): exhaustive search for block emulations by mirror-symmetric rules
+  emul_search2.cpp          period 1, 2, 3 (all arrangements) and period 6 (all two-rule arrangements), block length k
+                            a multiple of the period
+                            -> outputs/emul_search2/hits_{rule110,chiral}_P6two-rule_k*_T*.csv(.gz)
+  emul_phase.cpp            period 6 with phase-dependent codes (k not a multiple of 6)
+                            -> outputs/emul_phase/hits_chiral_P6two-rule_phasecodes_k3_T1-12.csv
+  emul_phase_glide.cpp      as emul_phase, but any frame shift d (one-step relations, chained by chains.py)
+                            -> outputs/emul_phase_glide/onestep_rule110_P3_phasecodes_glide_k1-3_T1-12.csv
+  period6_summary.py        chiral targets reached by achiral / chiral two-rule patterns at period 6
+  chains.py                 chains one-step relations into infinite emulations
 ```
 
 ## Reproducing the paper
@@ -61,3 +71,6 @@ python src/noise/measure_parameters.py      # about a minute
   column is the lock time) with different random seeds. The 8,192- and 16,384-block points in Fig. 3C1 come from
   `outputs/lock_charge`.
 - The figures in `plots/` are identical to those in the paper.
+- `emulation_search`: the exact command lines (Wmax, arrangement ranges) were not recorded. The P3 glide data was made
+  with `-DPOSCTRL` (arrangements read from `posctrl6.txt`, not in the repository). `period6_summary.py` and `chains.py`
+  import `mirror`, `compl_rule` and `canon_raw` from an `analyze.py` that is not in the repository.

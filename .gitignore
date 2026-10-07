@@ -3,5 +3,8 @@ src/*/outputs/
 # compiled binaries, built next to their sources
 src/random_starts/lockcharge
 src/noise/walls
+src/emulation_search/emul_search2
+src/emulation_search/emul_phase
+src/emulation_search/emul_phase_glide
 ckpt*.bin
 __pycache__/
